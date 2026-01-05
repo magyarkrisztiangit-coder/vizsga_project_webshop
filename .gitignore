@@ -1,0 +1,6 @@
+# Ignore build/dist output
+# Generated frontend build artifacts (keep them out of git)
+Vizsga/react-dist/
+
+# If you also want to ignore node_modules inside react project
+Vizsga/react/node_modules/

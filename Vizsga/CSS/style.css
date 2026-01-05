@@ -1,0 +1,296 @@
+:root {
+  --bg: #0f1216;
+  --panel: #151a21;
+  --text: #e6e9ef;
+  --muted: #9aa3ad;
+  --primary: #2d7ef7;
+  --accent: #00c489;
+  --danger: #ff5a67;
+  --border: #263042;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+.header { border-bottom: 1px solid var(--border); background: var(--panel); position: sticky; top: 0; z-index: 2000; }
+.header-top { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+.header h1 { margin: 0; }
+.header h1 a { color: var(--text); text-decoration: none; }
+.account-section { display: flex; align-items: center; }
+.account-btn { display: flex; align-items: center; gap: 8px; background: none; border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 1rem; }
+.account-btn:hover { background: var(--panel); }
+.account-icon { font-size: 1.2rem; }
+.account-text { font-weight: 500; }
+.menu-toggle { display: block; background: var(--primary); border: 1px solid var(--primary); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 1.2rem; }
+
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.3rem; }
+}
+
+.toolbar { display: grid; grid-template-columns: 1fr 180px 180px 180px auto auto; gap: 8px; padding-bottom: 16px; }
+.toolbar.hidden { display: none; }
+.toolbar input, .toolbar select, .toolbar button {
+  background: #10151c; border: 1px solid var(--border); color: var(--text);
+  padding: 10px 12px; border-radius: 8px;
+}
+.toolbar button { cursor: pointer; }
+.toolbar button#cartButton { background: var(--primary); border-color: var(--primary); }
+
+@media (max-width: 1400px) {
+  .toolbar { grid-template-columns: 1fr 150px 150px 150px auto auto; }
+}
+
+@media (max-width: 1200px) {
+  .toolbar { grid-template-columns: 1fr 140px 140px 140px auto auto; }
+}
+
+@media (max-width: 1000px) {
+  .toolbar { grid-template-columns: 1fr; gap: 8px; }
+  .toolbar input { grid-column: 1; }
+  .toolbar select { grid-column: 1; }
+  .toolbar button { grid-column: 1; }
+  #resetFilters { grid-column: 1 / 2; }
+  #cartButton { grid-column: 1; }
+}
+
+@media (max-width: 900px) {
+  .toolbar { grid-template-columns: 1fr; }
+  #resetFilters { display: none; }
+}
+
+@media (max-width: 600px) {
+  /* On very small screens make the toolbar wrap instead of hiding controls */
+  /* Nagyon kis képernyőkön a toolbar-t sorba rendezzük a vezérlők elrejtése helyett */
+  .toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .toolbar input { flex: 1 1 100%; min-width: 160px; }
+  .toolbar select { display: inline-block; flex: 1 1 140px; min-width: 110px; }
+  .toolbar button { padding: 8px 10px; font-size: 0.9rem; flex: 0 0 auto; }
+
+  /* Megőrizzük a lehetőséget a toolbar elrejtésére, amikor a .hidden osztály alkalmazva van */
+  .toolbar.hidden { display: none; }
+}
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 24px 0; position: relative; z-index: 1; }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; position: relative; z-index: 1; }
+.card-img { width: 100%; height: 250px; object-fit: cover; background: #0b0e12; }
+.card-body { padding: 12px; display: grid; gap: 8px; }
+.card-title { margin: 0; font-size: 1.1rem; }
+
+@media (max-width: 900px) {
+  .card-img { height: 200px; }
+  .card-title { font-size: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .card-img { height: 150px; }
+  .card-body { padding: 10px; }
+  .card-title { font-size: 0.95rem; }
+  .meta, .oem, .compat { font-size: 0.85rem; }
+  .addToCart { padding: 6px 10px; font-size: 0.9rem; }
+}
+.meta { color: var(--muted); font-size: 0.9rem; }
+.oem { font-size: 0.9rem; color: var(--muted); }
+.compat { font-size: 0.85rem; color: var(--muted); }
+.desc { margin: 6px 0 0 0; color: #cdd4dc; min-height: 44px; }
+.card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+.price { font-weight: 600; color: var(--accent); }
+.stock { color: var(--muted); font-size: 0.9rem; }
+.addToCart { background: var(--accent); border: 1px solid #00a874; color: #062018; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+
+.modal.hidden { display: none; }
+.modal { position: fixed; top: 72px; right: 0; bottom: 0; left: unset; display: flex; align-items: stretch; z-index: 100; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); cursor: pointer; }
+.modal-content { position: relative; background: var(--panel); border-left: 1px solid var(--border); width: 400px; max-width: 100%; z-index: 101; margin-left: auto; display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5); }
+
+@media (max-width: 768px) {
+  .modal-content { width: 350px; }
+}
+
+@media (max-width: 600px) {
+  .modal-content { width: 100%; }
+  .modal { top: 60px; }
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding: 12px 16px; }
+.modal-header h2 { margin: 0; }
+.modal-header button { background: transparent; border: none; color: var(--text); font-size: 24px; cursor: pointer; }
+#cartItems {
+  padding: 12px 16px;
+  /* használjunk flex oszlopot, hogy az elemek a tetejétől egymás alá rendeződjenek és a görgetés kiszámítható legyen */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  overflow: auto;
+  justify-content: flex-start; /* biztosítja, hogy az elemek a tetején kezdődjenek */
+}
+.cart-item { display: grid; grid-template-columns: 64px 1fr auto; gap: 10px; align-items: center; }
+.cart-item img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; }
+.cart-item .title { font-weight: 600; }
+.qty-controls { display: flex; align-items: center; gap: 6px; }
+.qty-controls button { background: #10151c; border: 1px solid var(--border); color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; }
+
+@media (max-width: 600px) {
+  .cart-item { grid-template-columns: 50px 1fr; }
+  .cart-item img { width: 50px; height: 50px; }
+  .qty-controls { flex-wrap: wrap; }
+  .qty-controls button { padding: 3px 6px; font-size: 0.85rem; }
+}
+.cart-footer { border-top: 1px solid var(--border); padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
+#checkoutBtn { background: var(--primary); border: 1px solid var(--primary); color: white; padding: 10px 14px; border-radius: 8px; cursor: pointer; width: 100%; }
+.link { background: transparent; border: none; color: var(--muted); cursor: pointer; text-decoration: underline; width: 100%; text-align: left; }
+
+
+
+
+
+
+
+
+/*------------------------------ Header cím stílusai -----------------------------*/
+.header h1 {
+  margin: 0;
+  display: inline-block;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-size: 1.6rem;
+
+  /* szép, élénk gradiensek a szövegben */
+  background: linear-gradient(90deg, #00c489 0%, #2d7ef7 50%, #9b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* finom glow és mélység */
+  text-shadow: 0 2px 10px rgba(45,126,247,0.08), 0 6px 20px rgba(0,0,0,0.6);
+
+  /* keret és belső tér, hogy kiemelkedjen a panelről */
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: inset 0 -6px 18px rgba(0,0,0,0.35), 0 6px 24px rgba(2,6,23,0.6);
+  vertical-align: middle;
+}
+
+/* kis ikon előtte (opcionális) */
+.header h1::before {
+  content: "🚗";
+  margin-right: 8px;
+  display: inline-block;
+  transform: translateY(-1px);
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.6));
+}
+
+/* reszponzív méretezés */
+@media (min-width: 900px) {
+  .header h1 { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.15rem;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+}
+
+
+
+
+
+/*
+ //------------------------------ Bejelentkezés / regisztráció gombok stílusai -----------------------------*/
+
+
+/* .auth-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* általános gomb-stílusok */
+/*.btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* külön színek bejelentkezés / regisztráció számára */
+/*.btn--login {
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn--register {
+  background: var(--accent);
+  border-color: #00a874;
+  color: #062018;
+}
+
+/* kisebb kijelzőkön kicsit kompaktabb */
+/*@media (max-width: 600px) {
+  .auth-buttons { gap: 6px; }
+  .btn { padding: 6px 8px; font-size: 0.95rem; }
+} /* */
+
+.login-container, .register-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.login-container h2, .register-container h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  background: #10151c;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.login-btn, .register-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.register-btn {
+  background: var(--accent);
+  border-color: #00a874;
+  color: #062018;
+}
+
+.hidden {
+  display: none;
+}

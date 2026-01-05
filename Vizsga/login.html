@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bejelentkezés - Autóalkatrész Webshop</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <h1><a href="index.html">Autóalkatrész Webshop</a></h1>
+        <div class="account-section">
+          <button id="accountButton" class="account-btn" aria-label="Fiók">
+            <span class="account-icon">👤</span>
+            <span class="account-text">Bejelentkezés</span>
+          </button>
+        </div>
+        <button id="menuToggle" class="menu-toggle" aria-label="Menü">☰</button>
+      </div>
+      <div class="toolbar" id="toolbar">
+        <input id="searchInput" type="search" placeholder="Keresés névre, márkára, OEM számra..." />
+        <select id="makeFilter">
+          <option value="">Márka</option>
+        </select>
+        <select id="modelFilter" disabled>
+          <option value="">Modell</option>
+        </select>
+        <select id="categoryFilter">
+          <option value="">Kategória</option>
+        </select>
+        <button id="resetFilters">Szűrők törlése</button>
+        <button id="cartButton">Kosár (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="login-container">
+      <h2>Bejelentkezés</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">E-mail cím:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Jelszó:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="login-btn">Bejelentkezés</button>
+      </form>
+      <p>Nincs még fiókod? <a href="#" id="registerLink">Regisztrálj itt</a></p>
+    </div>
+
+    <div class="register-container hidden">
+      <h2>Regisztráció</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="regEmail">E-mail cím:</label>
+          <input type="email" id="regEmail" name="regEmail" required />
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Jelszó:</label>
+          <input type="password" id="regPassword" name="regPassword" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Jelszó megerősítése:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+        <button type="submit" class="register-btn">Regisztráció</button>
+      </form>
+      <p>Van már fiókod? <a href="#" id="loginLink">Jelentkezz be</a></p>
+    </div>
+  </main>
+
+  <script>
+    // Frissítéskor mindig a főoldalra tér vissza
+    if (performance.getEntriesByType('navigation')[0].type === 'reload') {
+      window.location.href = 'index.html';
+    }
+  </script>
+  <script src="JS/navbar-toggle.js"></script>
+  <script src="JS/login.js"></script>
+</body>
+</html></content>

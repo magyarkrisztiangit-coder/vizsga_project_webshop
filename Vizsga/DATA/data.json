@@ -1,0 +1,144 @@
+[
+  {
+    "id": "BP-0001",
+    "name": "Féktárcsa első",
+    "brand": "Brembo",
+    "oem": "1K0615301AA",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Golf", "yearFrom": 2004, "yearTo": 2012 },
+      { "make": "Audi", "model": "A3", "yearFrom": 2003, "yearTo": 2013 }
+    ],
+    "category": "Fék",
+    "price": 25990,
+    "stock": 12,
+    "image": "IMAGES/fektarcsa_elso.jpg",
+    "description": "Szellőztetett, nagy teljesítményű első féktárcsa, 288 mm."
+  },
+  {
+    "id": "BP-0002",
+    "name": "Olajszűrő",
+    "brand": "MANN",
+    "oem": "06D115562",
+    "compatible": [
+      { "make": "Skoda", "model": "Octavia", "yearFrom": 2004, "yearTo": 2013 },
+      { "make": "Seat", "model": "Leon", "yearFrom": 2005, "yearTo": 2012 }
+    ],
+    "category": "Szűrők",
+    "price": 3490,
+    "stock": 34,
+    "image": "IMAGES/olajszuro.jpg",
+    "description": "Magas szűrési hatékonyság, OE minőség."
+  },
+  {
+    "id": "BP-0003",
+    "name": "Akkumulátor 60Ah",
+    "brand": "VARTA",
+    "oem": "560408054",
+    "compatible": [
+      { "make": "BMW", "model": "3 Series", "yearFrom": 1998, "yearTo": 2007 }
+    ],
+    "category": "Elektromos",
+    "price": 42990,
+    "stock": 7,
+    "image": "IMAGES/akku_60ah.jpg",
+    "description": "Ezüst technológia, megbízható indítás, 540A EN."
+  },
+  {
+    "id": "BP-0004",
+    "name": "Légszűrő",
+    "brand": "Bosch",
+    "oem": "13721730946",
+    "compatible": [
+      { "make": "BMW", "model": "5 Series", "yearFrom": 2000, "yearTo": 2007 }
+    ],
+    "category": "Szűrők",
+    "price": 5990,
+    "stock": 20,
+    "image": "IMAGES/legszuro.jpg",
+    "description": "Papírbetétes légszűrő, nagy szűrési kapacitással."
+  },
+  {
+    "id": "BP-0005",
+    "name": "Lengéscsillapító hátsó",
+    "brand": "KYB",
+    "oem": "1J0512011",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Passat", "yearFrom": 1997, "yearTo": 2005 }
+    ],
+    "category": "Futómű",
+    "price": 18990,
+    "stock": 15,
+    "image": "IMAGES/lengescsillapito.jpg",
+    "description": "Gázos lengéscsillapító, hosszú élettartam."
+  },
+  {
+    "id": "BP-0006",
+    "name": "Kuplung készlet",
+    "brand": "LUK",
+    "oem": "624317600",
+    "compatible": [
+      { "make": "Opel", "model": "Astra", "yearFrom": 2004, "yearTo": 2010 }
+    ],
+    "category": "Kuplung",
+    "price": 74990,
+    "stock": 5,
+    "image": "IMAGES/kuplung.jpg",
+    "description": "Teljes kuplung szett: tárcsa, szerkezet, kinyomócsapágy."
+  },
+  {
+    "id": "BP-0007",
+    "name": "Vízpumpa",
+    "brand": "HEPU",
+    "oem": "06A121011L",
+    "compatible": [
+      { "make": "Audi", "model": "A4", "yearFrom": 2001, "yearTo": 2008 }
+    ],
+    "category": "Motor",
+    "price": 16990,
+    "stock": 9,
+    "image": "IMAGES/vizpumpa.jpg",
+    "description": "Alumínium házas vízpumpa, tömítéssel."
+  },
+  {
+    "id": "BP-0008",
+    "name": "Xenon izzó D2S",
+    "brand": "Osram",
+    "oem": "66240",
+    "compatible": [
+      { "make": "Mercedes-Benz", "model": "C-Class", "yearFrom": 2000, "yearTo": 2014 }
+    ],
+    "category": "Világítás",
+    "price": 12990,
+    "stock": 25,
+    "image": "IMAGES/xenon_d2s.jpg",
+    "description": "4300K színhőmérséklet, OE minőségű xenon izzó."
+  },
+  {
+    "id": "BP-0009",
+    "name": "Gyújtógyertya",
+    "brand": "NGK",
+    "oem": "BKR6E",
+    "compatible": [
+      { "make": "Toyota", "model": "Corolla", "yearFrom": 1998, "yearTo": 2007 }
+    ],
+    "category": "Motor",
+    "price": 1990,
+    "stock": 50,
+    "image": "IMAGES/gyertya.jpg",
+    "description": "Rézelektródás gyújtógyertya, hosszú élettartam."
+  },
+  {
+    "id": "BP-0010",
+    "name": "Üzemanyagszűrő",
+    "brand": "Mahle",
+    "oem": "KL148",
+    "compatible": [
+      { "make": "Ford", "model": "Focus", "yearFrom": 2004, "yearTo": 2011 }
+    ],
+    "category": "Szűrők",
+    "price": 4990,
+    "stock": 18,
+    "image": "IMAGES/uzemanyagszuro.jpg",
+    "description": "Dízel üzemanyagszűrő, nagy szűrési hatékonyság."
+  }
+]

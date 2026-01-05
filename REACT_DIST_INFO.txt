@@ -1,0 +1,12 @@
+Vizsga/react-dist/ (IGNORED)
+
+Ez a fájl azért van a repóban, hogy a GitHub-on látható legyen, hogy a
+"Vizsga/react-dist/" mappa létezik. A mappa build kimenet (generált), ezért
+nem verziózzuk — a .gitignore bejegyzés megakadályozza, hogy a továbbiakban
+felkerüljön a repóba.
+
+Ha frissíteni szeretnéd a dist-et, futtasd a projekt build parancsát a
+`Vizsga/react/` mappában (pl. `npm run build`), majd ha tényleg szükséges,
+vedd ki ideiglenesen a .gitignore-ból.
+
+Path: Vizsga/react-dist/

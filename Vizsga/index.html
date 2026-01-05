@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autóalkatrész Webshop</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <h1><a href="index.html">Autóalkatrész Webshop</a></h1>
+        <div class="account-section">
+          <button id="accountButton" class="account-btn" aria-label="Fiók">
+            <span class="account-icon">👤</span>
+            <span class="account-text">Bejelentkezés</span>
+          </button>
+        </div>
+        <button id="menuToggle" class="menu-toggle" aria-label="Menü">☰</button>
+      </div>
+      <div class="toolbar" id="toolbar">
+        <input id="searchInput" type="search" placeholder="Keresés névre, márkára, OEM számra..." />
+        <select id="makeFilter">
+          <option value="">Márka</option>
+        </select>
+        <select id="modelFilter" disabled>
+          <option value="">Modell</option>
+        </select>
+        <select id="categoryFilter">
+          <option value="">Kategória</option>
+        </select>
+        <button id="resetFilters">Szűrők törlése</button>
+        <button id="cartButton">Kosár (<span id="cartCount">0</span>)</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="products" class="grid"></section>
+  <!-- React fogadó elem: a React alkalmazás ide renderelődik a build után -->
+  <div id="react-root"></div>
+  </main>
+
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Kosár</h2>
+        <button id="closeCart" aria-label="Bezárás">×</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="total">
+          Összesen: <strong id="cartTotal">0 Ft</strong>
+        </div>
+        <button id="checkoutBtn">Pénztár</button>
+        <button id="clearCartBtn" class="link">Kosár ürítése</button>
+      </div>
+    </div>
+    <div class="modal-backdrop"></div>
+  </div>
+
+  <template id="productCardTpl">
+    <article class="card">
+      <img class="card-img" alt="" />
+      <div class="card-body">
+        <h3 class="card-title"></h3>
+        <div class="meta">
+          <span class="brand"></span> • <span class="category"></span>
+        </div>
+        <div class="oem"></div>
+        <div class="compat"></div>
+        <p class="desc"></p>
+        <div class="card-footer">
+          <div class="price"></div>
+          <div class="stock"></div>
+          <button class="addToCart">Kosárba</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script>
+    // Frissítéskor mindig a főoldalra tér vissza
+    if (performance.getEntriesByType('navigation')[0].type === 'reload') {
+      window.location.href = 'index.html';
+    }
+  </script>
+  <!-- React csomag (buildelt) — a `Vizsga/react` mappában végrehajtott build hozza létre -->
+  <!-- A build futtatása után ezek a fájlok megjelennek a `react-dist/assets/` mappában -->
+  <link rel="stylesheet" href="react-dist/assets/index2.css" />
+  <script src="react-dist/assets/main.js" defer></script>
+
+  <script src="JS/app.js"></script>
+  <script src="JS/card.js"></script>
+  <script src="JS/navbar-toggle.js"></script>
+</body>
+</html>
