@@ -8,7 +8,7 @@ const state = {
   filters: {
     search: "",
     make: "",
-    model: "",
+    brand: "",
     category: ""
   },
   makeModels: new Map(), // make -> Set(models)
@@ -43,39 +43,66 @@ async function loadData() {
 }
 
 function buildFilters() {
+  const brandSelect = document.getElementById("brandFilter");
   const makeSelect = document.getElementById("makeFilter");
-  const modelSelect = document.getElementById("modelFilter");
   const categorySelect = document.getElementById("categoryFilter");
 
-  // Makes
-  [...state.makeModels.keys()].sort().forEach(make => {
-    const opt = document.createElement("option");
-    opt.value = make;
-    opt.textContent = make;
-    makeSelect.appendChild(opt);
-  });
+  // Canonical brand list requested by the user
+  const CANONICAL_BRANDS = [
+    'Bosch','Febi Bilstein','Mann Filter','NGK','Castrol','Mobil 1','ATE','TRW','Delphi','Valeo'
+  ];
+
+  // Brands (use canonical list if brand select exists)
+  if (brandSelect) {
+    CANONICAL_BRANDS.forEach(b => {
+      const opt = document.createElement('option');
+      opt.value = b;
+      opt.textContent = b;
+      brandSelect.appendChild(opt);
+    });
+    brandSelect.addEventListener('change', () => {
+      state.filters.brand = brandSelect.value;
+      applyFilters();
+    });
+  }
+
+  // Makes (only populate if the legacy makeFilter is present)
+  if (makeSelect) {
+    [...state.makeModels.keys()].sort().forEach(make => {
+      const opt = document.createElement("option");
+      opt.value = make;
+      opt.textContent = make;
+      makeSelect.appendChild(opt);
+    });
+  }
 
   // Categories
-  [...state.categories].sort().forEach(cat => {
+  // Categories: use canonical list requested by the user (replace derived list)
+  const CANONICAL_CATEGORIES = [
+    'Fékrendszer',
+    'Futómű',
+    'Motor',
+    'Olajok és szűrők',
+    'Elektromos rendszer',
+    'Hűtés',
+    'Kipufogó',
+    'Világítás',
+    'Karosszéria'
+  ];
+  CANONICAL_CATEGORIES.forEach(cat => {
     const opt = document.createElement("option");
     opt.value = cat;
     opt.textContent = cat;
     categorySelect.appendChild(opt);
   });
 
-  // Models tied to make
-  makeSelect.addEventListener("change", () => {
-    state.filters.make = makeSelect.value;
-    fillModels(makeSelect.value, modelSelect);
-    state.filters.model = "";
-    modelSelect.value = "";
-    applyFilters();
-  });
-
-  modelSelect.addEventListener("change", () => {
-    state.filters.model = modelSelect.value;
-    applyFilters();
-  });
+  // Make change (legacy element) — models removed per request
+  if (makeSelect) {
+    makeSelect.addEventListener("change", () => {
+      state.filters.make = makeSelect.value;
+      applyFilters();
+    });
+  }
 
   categorySelect.addEventListener("change", () => {
     state.filters.category = categorySelect.value;
@@ -83,21 +110,7 @@ function buildFilters() {
   });
 }
 
-function fillModels(make, modelSelect) {
-  modelSelect.innerHTML = '<option value="">Modell</option>';
-  if (!make) {
-    modelSelect.disabled = true;
-    return;
-  }
-  const models = state.makeModels.get(make) || new Set();
-  [...models].sort().forEach(m => {
-    const opt = document.createElement("option");
-    opt.value = m;
-    opt.textContent = m;
-    modelSelect.appendChild(opt);
-  });
-  modelSelect.disabled = false;
-}
+// (Model select removed) Previously fillModels populated model options — removed per user request.
 
 function mountEvents() {
   const searchInput = document.getElementById("searchInput");
@@ -118,12 +131,14 @@ function mountEvents() {
   }, 200));
 
   resetBtn.addEventListener("click", () => {
-    state.filters = { search: "", make: "", model: "", category: "" };
+    state.filters = { search: "", make: "", brand: "", category: "" };
     document.getElementById("searchInput").value = "";
-    document.getElementById("makeFilter").value = "";
-    document.getElementById("modelFilter").value = "";
-    document.getElementById("categoryFilter").value = "";
-    document.getElementById("modelFilter").disabled = true;
+    const brandEl = document.getElementById("brandFilter");
+    if (brandEl) brandEl.value = "";
+    const makeEl = document.getElementById("makeFilter");
+    if (makeEl) makeEl.value = "";
+    const categoryEl = document.getElementById("categoryFilter");
+    if (categoryEl) categoryEl.value = "";
     applyFilters();
   });
 
@@ -162,7 +177,7 @@ function mountEvents() {
 }
 
 function applyFilters() {
-  const { search, make, model, category } = state.filters;
+  const { search, make, category, brand } = state.filters;
   state.filtered = state.products.filter(p => {
     // search in name, brand, oem
     const needle = search;
@@ -171,14 +186,22 @@ function applyFilters() {
 
     const matchCategory = category ? p.category === category : true;
 
-    let matchMake = true, matchModel = true;
-    if (make || model) {
+    let matchMake = true;
+    if (make) {
       const compat = Array.isArray(p.compatible) ? p.compatible : [];
-      matchMake = make ? compat.some(c => (c.make || "") === make) : true;
-      matchModel = model ? compat.some(c => (c.model || "") === model) : true;
+      matchMake = compat.some(c => (c.make || "") === make);
     }
 
-    return matchSearch && matchCategory && matchMake && matchModel;
+    // Brand matching: normalize by removing non-alphanumerics and lowercasing
+    let matchBrand = true;
+    if (brand) {
+      const norm = s => (s || '').toString().toLowerCase().replace(/[^a-z0-9]+/g, '');
+      const pbrand = norm(p.brand || '');
+      const sbrand = norm(brand || '');
+      matchBrand = pbrand.includes(sbrand) || sbrand.includes(pbrand);
+    }
+
+    return matchSearch && matchCategory && matchMake && matchBrand;
   });
 
   renderProducts();
