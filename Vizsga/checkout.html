@@ -173,11 +173,10 @@
           </div>
 
           <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
-            <button type="submit" class="btn">Rendelés leadása</button>
+            <button type="submit" class="btn" id="rendelés">Rendelés leadása</button>
             <button type="button" id="reset" class="btn-ghost">Űrlap törlése</button>
           </div>
         </form>
-
         <!-- Rendelés előnézet kártya (az alert helyett ide írjuk az összegzést) -->
         <div id="order-preview" class="card" style="margin-top:12px;display:none"></div>
       </main>
@@ -300,42 +299,10 @@
         const pay = checkoutForm.querySelector('input[name="payment"]:checked').value;
         const subtotal = Number(checkoutForm.dataset.subtotal || 0);
         const total = subtotal + (SHIPPING[ship]||0);
-
-        // Megjelenítés kártyában az alert helyett
-        orderPreview.innerHTML = `
-          <h4 style="margin:0 0 8px">Rendelés előnézet</h4>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <div><strong>Név:</strong> ${name}</div>
-            <div><strong>E-mail:</strong> ${email}</div>
-            <div><strong>Szállítás:</strong> ${ship}</div>
-            <div><strong>Fizetés:</strong> ${pay}</div>
-            <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px dashed rgba(255,255,255,0.03)">
-              <div class="muted">Végösszeg</div>
-              <div style="font-weight:700;color:var(--accent)">${fmt(total)}</div>
-            </div>
-            <div style="display:flex;gap:8px;margin-top:10px">
-              <button id="confirm-order" class="btn">Megrendelés elküldése</button>
-              <button id="close-preview" class="btn-ghost">Bezárás</button>
-            </div>
-          </div>
-        `;
-        orderPreview.style.display = 'block';
-        orderPreview.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        // Confirm / Close gombok
-        document.getElementById('close-preview').addEventListener('click', () => {
-          orderPreview.style.display = 'none';
-        });
-
-        document.getElementById('confirm-order').addEventListener('click', () => {
-          // Egyszerű példa: kosár törlése és köszönő üzenet megjelenítése
-          localStorage.removeItem('cart');
-          CART = [];
-          renderCart();
-          calculate();
-          orderPreview.innerHTML = `<div style="font-weight:700">Köszönjük! A rendelésed elküldésre került.</div>`;
-          setTimeout(() => { orderPreview.style.display = 'none'; }, 3000);
-        });
+//////////////////////////////////////////////////////
+        // Adatok mentése és új oldal megnyitása
+        localStorage.setItem('orderData', JSON.stringify({name, email, ship, pay, total, cart: CART}));
+        window.location.href = 'order-preview.html';
       });
 
       // Reset
