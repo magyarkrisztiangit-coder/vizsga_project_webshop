@@ -11,13 +11,14 @@
     <div class="container">
       <div class="header-top">
   <h1><a href="index.html">CarCore</a></h1>
-        <div class="account-section">
+        <div class="header-right">
           <button id="accountButton" class="account-btn" aria-label="Fiók">
             <span class="account-icon">👤</span>
             <span class="account-text">Bejelentkezés</span>
           </button>
+          <button id="cartButton" class="cart-btn" aria-label="Kosár">Kosár (<span id="cartCount">0</span>)</button>
+          <button id="menuToggle" class="menu-toggle" aria-label="Menü">☰</button>
         </div>
-        <button id="menuToggle" class="menu-toggle" aria-label="Menü">☰</button>
       </div>
       <div class="toolbar" id="toolbar">
         <input id="searchInput" type="search" placeholder="Keresés névre, márkára, OEM számra..." />
@@ -28,7 +29,6 @@
           <option value="">Kategória</option>
         </select>
         <button id="resetFilters">Szűrők törlése</button>
-        <button id="cartButton">Kosár (<span id="cartCount">0</span>)</button>
       </div>
 
     </div>
