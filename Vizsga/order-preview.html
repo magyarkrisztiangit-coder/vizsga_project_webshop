@@ -226,6 +226,15 @@
       // Kosár renderelése
       renderCart();
 
+      // Kártya lejárati dátum formázása
+      document.getElementById('card-expiry').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); // Csak számok
+        if (value.length >= 2) {
+          value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+      });
+
       // Gombok kezelése
       document.getElementById('close-preview').addEventListener('click', () => {
         window.location.href = 'checkout.html';
