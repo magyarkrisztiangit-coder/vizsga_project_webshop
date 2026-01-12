@@ -12,7 +12,9 @@ const state = {
     category: ""
   },
   makeModels: new Map(), // make -> Set(models)
-  categories: new Set()
+  categories: new Set(),
+  currentPage: 1,
+  itemsPerPage: 9
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -204,6 +206,8 @@ function applyFilters() {
     return matchSearch && matchCategory && matchMake && matchBrand;
   });
 
+  // Reset to page 1 when filters change
+  state.currentPage = 1;
   renderProducts();
 }
 
@@ -212,11 +216,18 @@ function renderProducts() {
   container.innerHTML = "";
   if (!state.filtered.length) {
     container.innerHTML = `<p>Nincs találat a megadott szűrők alapján.</p>`;
+    renderPagination();
     return;
   }
 
+  // Calculate pagination
+  const totalPages = Math.ceil(state.filtered.length / state.itemsPerPage);
+  const startIdx = (state.currentPage - 1) * state.itemsPerPage;
+  const endIdx = startIdx + state.itemsPerPage;
+  const pageItems = state.filtered.slice(startIdx, endIdx);
+
   const tpl = document.getElementById("productCardTpl");
-  state.filtered.forEach(p => {
+  pageItems.forEach(p => {
     const node = tpl.content.cloneNode(true);
     const img = node.querySelector(".card-img");
     const title = node.querySelector(".card-title");
@@ -251,6 +262,9 @@ function renderProducts() {
 
     container.appendChild(node);
   });
+
+  // Render pagination controls
+  renderPagination();
 }
 
 function addToCart(product) {
@@ -445,4 +459,57 @@ function saveCart() {
   } catch (e) {
     // figyelmen kívül hagyjuk a tárolási hibákat
   }
+}
+
+function renderPagination() {
+  const container = document.getElementById("pagination");
+  if (!container) return;
+  
+  container.innerHTML = "";
+  
+  if (!state.filtered.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const totalPages = Math.ceil(state.filtered.length / state.itemsPerPage);
+  
+  if (totalPages <= 1) {
+    container.innerHTML = "";
+    return;
+  }
+
+  // Previous button
+  const prevBtn = document.createElement("button");
+  prevBtn.className = "pagination-btn";
+  prevBtn.textContent = "← Előző";
+  prevBtn.disabled = state.currentPage === 1;
+  prevBtn.addEventListener("click", () => {
+    if (state.currentPage > 1) {
+      state.currentPage--;
+      renderProducts();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+  container.appendChild(prevBtn);
+
+  // Page info
+  const info = document.createElement("span");
+  info.className = "pagination-info";
+  info.textContent = `Oldal ${state.currentPage} / ${totalPages}`;
+  container.appendChild(info);
+
+  // Next button
+  const nextBtn = document.createElement("button");
+  nextBtn.className = "pagination-btn";
+  nextBtn.textContent = "Következő →";
+  nextBtn.disabled = state.currentPage === totalPages;
+  nextBtn.addEventListener("click", () => {
+    if (state.currentPage < totalPages) {
+      state.currentPage++;
+      renderProducts();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+  container.appendChild(nextBtn);
 }
