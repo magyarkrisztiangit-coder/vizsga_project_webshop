@@ -156,20 +156,6 @@
     "description": "OE specifikációnak megfelelő féktömlő, magas nyomásálló."
   },
   {
-    "id": "BP-0012",
-    "name": "Lengéscsillapító hátsó",
-    "brand": "Bilstein",
-    "oem": "22045639",
-    "compatible": [
-      { "make": "Volkswagen", "model": "Passat", "yearFrom": 2005, "yearTo": 2011 }
-    ],
-    "category": "Futómű",
-    "price": 18990,
-    "stock": 9,
-    "image": "IMAGES/lengescsillapito.jpg",
-    "description": "Hidraulikus lengéscsillapító, jó kényelem és kontrol."
-  },
-  {
     "id": "BP-0013",
     "name": "Szinkronöv",
     "brand": "Contitech",
@@ -266,5 +252,131 @@
     "stock": 7,
     "image": "IMAGES/tengelykapcsolo.jpg",
     "description": "Teljes tengelykapcsoló szett, könnyebb karbantartás."
+  },
+  {
+    "id": "BP-0020",
+    "name": "Kormányrásegítés cső",
+    "brand": "ZF",
+    "oem": "8E0422893G",
+    "compatible": [
+      { "make": "Audi", "model": "A6", "yearFrom": 2004, "yearTo": 2011 }
+    ],
+    "category": "Kormányzás",
+    "price": 28990,
+    "stock": 8,
+    "image": "IMAGES/kormanyracsatorna.jpg",
+    "description": "Hidraulikus kormányrásegítés cső, teljes szett."
+  },
+  {
+    "id": "BP-0021",
+    "name": "Fékfék csipesz elöl",
+    "brand": "Brembo",
+    "oem": "L4506",
+    "compatible": [
+      { "make": "Fiat", "model": "Punto", "yearFrom": 2003, "yearTo": 2012 }
+    ],
+    "category": "Fék",
+    "price": 22990,
+    "stock": 16,
+    "image": "IMAGES/fekcsipesz_elo.jpg",
+    "description": "Hidraulikus fékcsipesz, szellőztetett féktárcához."
+  },
+  {
+    "id": "BP-0022",
+    "name": "Turbó feltöltő",
+    "brand": "Garrett",
+    "oem": "454064-0001",
+    "compatible": [
+      { "make": "Volvo", "model": "S40", "yearFrom": 2004, "yearTo": 2012 }
+    ],
+    "category": "Motor",
+    "price": 89990,
+    "stock": 3,
+    "image": "IMAGES/turbo.jpg",
+    "description": "Turbófeltöltő dízel motorokhoz, teljes garancia."
+  },
+  {
+    "id": "BP-0023",
+    "name": "Levegőtömítő gumi",
+    "brand": "Corteco",
+    "oem": "COR19017970",
+    "compatible": [
+      { "make": "Mazda", "model": "3", "yearFrom": 2003, "yearTo": 2009 }
+    ],
+    "category": "Motor",
+    "price": 3990,
+    "stock": 45,
+    "image": "IMAGES/legotomito.jpg",
+    "description": "Gumiból készült légvédelmi tömítés, rugalmas."
+  },
+  {
+    "id": "BP-0024",
+    "name": "Kormány vezérlés kulcs",
+    "brand": "Aisin",
+    "oem": "TRE13A",
+    "compatible": [
+      { "make": "Toyota", "model": "Yaris", "yearFrom": 2005, "yearTo": 2011 }
+    ],
+    "category": "Kormányzás",
+    "price": 11990,
+    "stock": 22,
+    "image": "IMAGES/kormany_szerkezet.jpg",
+    "description": "Kormány szerkezeti elem, könnyű és tartós."
+  },
+  {
+    "id": "BP-0025",
+    "name": "Hűtőfolyadék G12",
+    "brand": "Fuchs",
+    "oem": "602877",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Jetta", "yearFrom": 2005, "yearTo": 2010 }
+    ],
+    "category": "Hűtés",
+    "price": 5490,
+    "stock": 35,
+    "image": "IMAGES/hutofoly.jpg",
+    "description": "Magas minőségű hűtőfolyadék, hosszú keringési ciklus."
+  },
+  {
+    "id": "BP-0026",
+    "name": "Generátor teljes",
+    "brand": "Bosch",
+    "oem": "0124125001",
+    "compatible": [
+      { "make": "Skoda", "model": "Superb", "yearFrom": 2002, "yearTo": 2008 }
+    ],
+    "category": "Elektromos",
+    "price": 38990,
+    "stock": 6,
+    "image": "IMAGES/generator.jpg",
+    "description": "Teljes generátor, 120A teljesítmény, garantált."
+  },
+  {
+    "id": "BP-0027",
+    "name": "Szélvédő tömítés",
+    "brand": "Insbruck",
+    "oem": "SEAL-WINDSHIELD",
+    "compatible": [
+      { "make": "Hyundai", "model": "Elantra", "yearFrom": 2006, "yearTo": 2011 }
+    ],
+    "category": "Karosszéria",
+    "price": 7990,
+    "stock": 13,
+    "image": "IMAGES/szelvedo_tomites.jpg",
+    "description": "Szélvédő gumi tömítés, teljes körülvétel."
+  },
+  {
+    "id": "BP-0028",
+    "name": "Lengéscsillapító elöl",
+    "brand": "Bilstein",
+    "oem": "220-A0041-4",
+    "compatible": [
+      { "make": "Mercedes-Benz", "model": "E-Class", "yearFrom": 2002, "yearTo": 2009 }
+    ],
+    "category": "Futómű",
+    "price": 27990,
+    "stock": 9,
+    "image": "IMAGES/lengescsillapito_elo.jpg",
+    "description": "Gázos lengéscsillapító elöl, szupersportív felfüggesztés."
   }
 ]
