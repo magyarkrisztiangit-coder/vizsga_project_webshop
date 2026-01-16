@@ -10,6 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginContainer = document.querySelector(".login-container");
   const registerContainer = document.querySelector(".register-container");
 
+  // Password toggle functionality
+  const passwordToggles = document.querySelectorAll(".password-toggle");
+  passwordToggles.forEach((toggle) => {
+    toggle.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      const targetId = toggle.getAttribute("data-target");
+      const input = document.getElementById(targetId);
+      input.type = input.type === "password" ? "text" : "password";
+    });
+
+    toggle.addEventListener("mouseup", (e) => {
+      e.preventDefault();
+      const targetId = toggle.getAttribute("data-target");
+      const input = document.getElementById(targetId);
+      input.type = "password";
+    });
+
+    toggle.addEventListener("mouseleave", () => {
+      const targetId = toggle.getAttribute("data-target");
+      const input = document.getElementById(targetId);
+      input.type = "password";
+    });
+  });
+
   // Switch to register
   if (registerLink) {
     registerLink.addEventListener("click", (e) => {
@@ -50,13 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
     registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const email = document.getElementById("regEmail").value;
+      const birthDate = document.getElementById("birthDate").value;
       const password = document.getElementById("regPassword").value;
       const confirmPassword = document.getElementById("confirmPassword").value;
       if (password !== confirmPassword) {
         alert("A jelszavak nem egyeznek!");
         return;
       }
-      if (email && password) {
+      if (email && birthDate && password) {
         alert("Regisztráció sikeres! (Ez csak demo)");
         // Switch to login
         registerContainer.classList.add("hidden");

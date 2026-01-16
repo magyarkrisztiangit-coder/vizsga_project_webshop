@@ -43,7 +43,10 @@
         </div>
         <div class="form-group">
           <label for="password">Jelszó:</label>
-          <input type="password" id="password" name="password" required />
+          <div class="password-field">
+            <input type="password" id="password" name="password" required />
+            <button type="button" class="password-toggle" data-target="password">👁️</button>
+          </div>
         </div>
         <button type="submit" class="login-btn">Bejelentkezés</button>
       </form>
@@ -58,12 +61,22 @@
           <input type="email" id="regEmail" name="regEmail" required />
         </div>
         <div class="form-group">
+          <label for="birthDate">Születési dátum:</label>
+          <input type="date" id="birthDate" name="birthDate" required />
+        </div>
+        <div class="form-group">
           <label for="regPassword">Jelszó:</label>
-          <input type="password" id="regPassword" name="regPassword" required />
+          <div class="password-field">
+            <input type="password" id="regPassword" name="regPassword" required />
+            <button type="button" class="password-toggle" data-target="regPassword">👁️</button>
+          </div>
         </div>
         <div class="form-group">
           <label for="confirmPassword">Jelszó megerősítése:</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" required />
+          <div class="password-field">
+            <input type="password" id="confirmPassword" name="confirmPassword" required />
+            <button type="button" class="password-toggle" data-target="confirmPassword">👁️</button>
+          </div>
         </div>
         <button type="submit" class="register-btn">Regisztráció</button>
       </form>
@@ -86,15 +99,6 @@
         <div class="footer-section">
           <h3>CarCore</h3>
           <p>Minőségi alkatrészek és autószerelési kellékek. Megbízható szolgáltatás, gyors szállítás.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Gyors linkek</h4>
-          <ul>
-            <li><a href="index.html">Kezdőlap</a></li>
-            <li><a href="#">Termékek</a></li>
-            <li><a href="#">Kosár</a></li>
-            <li><a href="checkout.html">Pénztár</a></li>
-          </ul>
         </div>
         <div class="footer-section">
           <h4>Szolgáltatások</h4>

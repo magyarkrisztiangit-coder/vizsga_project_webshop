@@ -37,8 +37,6 @@
   <main class="container">
     <section id="products" class="grid"></section>
     <div id="pagination" class="pagination"></div>
-  <!-- React fogadó elem: a React alkalmazás ide renderelődik a build után -->
-  <div id="react-root"></div>
   </main>
 
   <div id="cartModal" class="modal hidden">
@@ -85,10 +83,6 @@
       window.location.href = 'index.html';
     }
   </script>
-  <!-- React csomag (buildelt) — a `Vizsga/react` mappában végrehajtott build hozza létre -->
-  <!-- A build futtatása után ezek a fájlok megjelennek a `react-dist/assets/` mappában -->
-  <link rel="stylesheet" href="react-dist/assets/index2.css" />
-  <script src="react-dist/assets/main.js" defer></script>
 
   <script src="JS/app.js"></script>
   <script src="JS/card.js"></script>
@@ -100,15 +94,6 @@
       <div class="footer-section">
         <h3>CarCore</h3>
         <p>Minőségi alkatrészek és autószerelési kellékek. Megbízható szolgáltatás, gyors szállítás.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Gyors linkek</h4>
-        <ul>
-          <li><a href="#">Kezdőlap</a></li>
-          <li><a href="#">Termékek</a></li>
-          <li><a href="#">Kosár</a></li>
-          <li><a href="checkout.html">Pénztár</a></li>
-        </ul>
       </div>
       <div class="footer-section">
         <h4>Szolgáltatások</h4>
