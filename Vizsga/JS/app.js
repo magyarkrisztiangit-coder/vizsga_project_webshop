@@ -172,7 +172,8 @@ function mountEvents() {
     const modalContent = document.querySelector(".modal-content");
     
     // Ha a kosár nyitva van és nem a kosáron vagy a kosár gombján kattintunk
-    if (!modal.classList.contains("hidden") && !modal.contains(e.target) && e.target !== cartBtn) {
+    // és nem linkre kattintunk
+    if (!modal.classList.contains("hidden") && !modal.contains(e.target) && e.target !== cartBtn && e.target.tagName !== "A") {
       closeCartModal();
     }
   });
