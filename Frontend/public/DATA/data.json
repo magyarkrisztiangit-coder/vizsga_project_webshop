@@ -1,0 +1,382 @@
+[
+  {
+    "id": "BP-0001",
+    "name": "Féktárcsa első",
+    "brand": "Brembo",
+    "oem": "1K0615301AA",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Golf", "yearFrom": 2004, "yearTo": 2012 },
+      { "make": "Audi", "model": "A3", "yearFrom": 2003, "yearTo": 2013 }
+    ],
+    "category": "Fék",
+    "price": 25990,
+    "stock": 12,
+    "image": "IMAGES/fektarcsa_elso.jpg",
+    "description": "Szellőztetett, nagy teljesítményű első féktárcsa, 288 mm."
+  },
+  {
+    "id": "BP-0002",
+    "name": "Olajszűrő",
+    "brand": "MANN",
+    "oem": "06D115562",
+    "compatible": [
+      { "make": "Skoda", "model": "Octavia", "yearFrom": 2004, "yearTo": 2013 },
+      { "make": "Seat", "model": "Leon", "yearFrom": 2005, "yearTo": 2012 }
+    ],
+    "category": "Szűrők",
+    "price": 3490,
+    "stock": 34,
+    "image": "IMAGES/olajszuro.jpg",
+    "description": "Magas szűrési hatékonyság, OE minőség."
+  },
+  {
+    "id": "BP-0003",
+    "name": "Akkumulátor 60Ah",
+    "brand": "VARTA",
+    "oem": "560408054",
+    "compatible": [
+      { "make": "BMW", "model": "3 Series", "yearFrom": 1998, "yearTo": 2007 }
+    ],
+    "category": "Elektromos",
+    "price": 42990,
+    "stock": 7,
+    "image": "IMAGES/akku_60ah.jpg",
+    "description": "Ezüst technológia, megbízható indítás, 540A EN."
+  },
+  {
+    "id": "BP-0004",
+    "name": "Légszűrő",
+    "brand": "Bosch",
+    "oem": "13721730946",
+    "compatible": [
+      { "make": "BMW", "model": "5 Series", "yearFrom": 2000, "yearTo": 2007 }
+    ],
+    "category": "Szűrők",
+    "price": 5990,
+    "stock": 20,
+    "image": "IMAGES/legszuro.jpg",
+    "description": "Papírbetétes légszűrő, nagy szűrési kapacitással."
+  },
+  {
+    "id": "BP-0005",
+    "name": "Lengéscsillapító hátsó",
+    "brand": "KYB",
+    "oem": "1J0512011",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Passat", "yearFrom": 1997, "yearTo": 2005 }
+    ],
+    "category": "Futómű",
+    "price": 18990,
+    "stock": 15,
+    "image": "IMAGES/lengescsillapito.jpg",
+    "description": "Gázos lengéscsillapító, hosszú élettartam."
+  },
+  {
+    "id": "BP-0006",
+    "name": "Kuplung készlet",
+    "brand": "LUK",
+    "oem": "624317600",
+    "compatible": [
+      { "make": "Opel", "model": "Astra", "yearFrom": 2004, "yearTo": 2010 }
+    ],
+    "category": "Kuplung",
+    "price": 74990,
+    "stock": 5,
+    "image": "IMAGES/kuplung.jpg",
+    "description": "Teljes kuplung szett: tárcsa, szerkezet, kinyomócsapágy."
+  },
+  {
+    "id": "BP-0007",
+    "name": "Vízpumpa",
+    "brand": "HEPU",
+    "oem": "06A121011L",
+    "compatible": [
+      { "make": "Audi", "model": "A4", "yearFrom": 2001, "yearTo": 2008 }
+    ],
+    "category": "Motor",
+    "price": 16990,
+    "stock": 9,
+    "image": "IMAGES/vizpumpa.jpg",
+    "description": "Alumínium házas vízpumpa, tömítéssel."
+  },
+  {
+    "id": "BP-0008",
+    "name": "Xenon izzó D2S",
+    "brand": "Osram",
+    "oem": "66240",
+    "compatible": [
+      { "make": "Mercedes-Benz", "model": "C-Class", "yearFrom": 2000, "yearTo": 2014 }
+    ],
+    "category": "Világítás",
+    "price": 12990,
+    "stock": 25,
+    "image": "IMAGES/xenon_d2s.jpg",
+    "description": "4300K színhőmérséklet, OE minőségű xenon izzó."
+  },
+  {
+    "id": "BP-0009",
+    "name": "Gyújtógyertya",
+    "brand": "NGK",
+    "oem": "BKR6E",
+    "compatible": [
+      { "make": "Toyota", "model": "Corolla", "yearFrom": 1998, "yearTo": 2007 }
+    ],
+    "category": "Motor",
+    "price": 1990,
+    "stock": 50,
+    "image": "IMAGES/gyertya.jpg",
+    "description": "Rézelektródás gyújtógyertya, hosszú élettartam."
+  },
+  {
+    "id": "BP-0010",
+    "name": "Üzemanyagszűrő",
+    "brand": "Mahle",
+    "oem": "KL148",
+    "compatible": [
+      { "make": "Ford", "model": "Focus", "yearFrom": 2004, "yearTo": 2011 }
+    ],
+    "category": "Szűrők",
+    "price": 4990,
+    "stock": 18,
+    "image": "IMAGES/uzemanyagszuro.jpg",
+    "description": "Dízel üzemanyagszűrő, nagy szűrési hatékonyság."
+  },
+  {
+    "id": "BP-0011",
+    "name": "Féktömlő elöl",
+    "brand": "ATE",
+    "oem": "34116761443",
+    "compatible": [
+      { "make": "BMW", "model": "5 Series", "yearFrom": 2003, "yearTo": 2010 }
+    ],
+    "category": "Fékrendszer",
+    "price": 8990,
+    "stock": 14,
+    "image": "IMAGES/fektomlohelo.jpg",
+    "description": "OE specifikációnak megfelelő féktömlő, magas nyomásálló."
+  },
+  {
+    "id": "BP-0013",
+    "name": "Szinkronöv",
+    "brand": "Contitech",
+    "oem": "03G109107A",
+    "compatible": [
+      { "make": "Audi", "model": "A4", "yearFrom": 2004, "yearTo": 2009 }
+    ],
+    "category": "Motor",
+    "price": 16490,
+    "stock": 8,
+    "image": "IMAGES/szinkronov.jpg",
+    "description": "Szinkronöv turbódiesel motorokhoz, hosszú élettartam."
+  },
+  {
+    "id": "BP-0014",
+    "name": "Klímakompresszor",
+    "brand": "Denso",
+    "oem": "10000K91",
+    "compatible": [
+      { "make": "Honda", "model": "Civic", "yearFrom": 2006, "yearTo": 2012 }
+    ],
+    "category": "Hűtés",
+    "price": 52990,
+    "stock": 5,
+    "image": "IMAGES/klimakompresszor.jpg",
+    "description": "Új klímakompresszor, teljes garancia, kész a beépítésre."
+  },
+  {
+    "id": "BP-0015",
+    "name": "Kipufogódob",
+    "brand": "Bosal",
+    "oem": "154-949",
+    "compatible": [
+      { "make": "Renault", "model": "Clio", "yearFrom": 2005, "yearTo": 2012 }
+    ],
+    "category": "Kipufogó",
+    "price": 24990,
+    "stock": 11,
+    "image": "IMAGES/kipufogodob.jpg",
+    "description": "Rozsdamentes kipufogódob, hangtompítás és katalitikus."
+  },
+  {
+    "id": "BP-0016",
+    "name": "Fényszóró elöl bal",
+    "brand": "Valeo",
+    "oem": "1307329075",
+    "compatible": [
+      { "make": "Peugeot", "model": "307", "yearFrom": 2001, "yearTo": 2008 }
+    ],
+    "category": "Világítás",
+    "price": 31990,
+    "stock": 6,
+    "image": "IMAGES/fenyszoro.jpg",
+    "description": "Xenon fényszóró, elektromosan állítható magasság."
+  },
+  {
+    "id": "BP-0017",
+    "name": "Motortartó bal",
+    "brand": "Hutchinson",
+    "oem": "1166220",
+    "compatible": [
+      { "make": "Citroen", "model": "C5", "yearFrom": 2004, "yearTo": 2012 }
+    ],
+    "category": "Karosszéria",
+    "price": 9990,
+    "stock": 10,
+    "image": "IMAGES/motortarto.jpg",
+    "description": "Gumibetétes motortartó, csökkenti a rezgéseket."
+  },
+  {
+    "id": "BP-0018",
+    "name": "Motorolaj 5W-40",
+    "brand": "Castrol",
+    "oem": "15337D",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Golf", "yearFrom": 2004, "yearTo": 2012 }
+    ],
+    "category": "Olajok és szűrők",
+    "price": 6990,
+    "stock": 40,
+    "image": "IMAGES/motorolaj_5w40.jpg",
+    "description": "Szintetikus motorolaj, kiváló viszkozitási index."
+  },
+  {
+    "id": "BP-0019",
+    "name": "Összekapcsoló tengelykapcsoló",
+    "brand": "LuK",
+    "oem": "1061500100",
+    "compatible": [
+      { "make": "Opel", "model": "Vectra", "yearFrom": 2003, "yearTo": 2009 }
+    ],
+    "category": "Motor",
+    "price": 34990,
+    "stock": 7,
+    "image": "IMAGES/tengelykapcsolo.jpg",
+    "description": "Teljes tengelykapcsoló szett, könnyebb karbantartás."
+  },
+  {
+    "id": "BP-0020",
+    "name": "Kormányrásegítés cső",
+    "brand": "ZF",
+    "oem": "8E0422893G",
+    "compatible": [
+      { "make": "Audi", "model": "A6", "yearFrom": 2004, "yearTo": 2011 }
+    ],
+    "category": "Kormányzás",
+    "price": 28990,
+    "stock": 8,
+    "image": "IMAGES/kormanyracsatorna.jpg",
+    "description": "Hidraulikus kormányrásegítés cső, teljes szett."
+  },
+  {
+    "id": "BP-0021",
+    "name": "Fékfék csipesz elöl",
+    "brand": "Brembo",
+    "oem": "L4506",
+    "compatible": [
+      { "make": "Fiat", "model": "Punto", "yearFrom": 2003, "yearTo": 2012 }
+    ],
+    "category": "Fék",
+    "price": 22990,
+    "stock": 16,
+    "image": "IMAGES/fekcsipesz_elo.jpg",
+    "description": "Hidraulikus fékcsipesz, szellőztetett féktárcához."
+  },
+  {
+    "id": "BP-0022",
+    "name": "Turbó feltöltő",
+    "brand": "Garrett",
+    "oem": "454064-0001",
+    "compatible": [
+      { "make": "Volvo", "model": "S40", "yearFrom": 2004, "yearTo": 2012 }
+    ],
+    "category": "Motor",
+    "price": 89990,
+    "stock": 3,
+    "image": "IMAGES/turbo.jpg",
+    "description": "Turbófeltöltő dízel motorokhoz, teljes garancia."
+  },
+  {
+    "id": "BP-0023",
+    "name": "Levegőtömítő gumi",
+    "brand": "Corteco",
+    "oem": "COR19017970",
+    "compatible": [
+      { "make": "Mazda", "model": "3", "yearFrom": 2003, "yearTo": 2009 }
+    ],
+    "category": "Motor",
+    "price": 3990,
+    "stock": 45,
+    "image": "IMAGES/legotomito.jpg",
+    "description": "Gumiból készült légvédelmi tömítés, rugalmas."
+  },
+  {
+    "id": "BP-0024",
+    "name": "Kormány vezérlés kulcs",
+    "brand": "Aisin",
+    "oem": "TRE13A",
+    "compatible": [
+      { "make": "Toyota", "model": "Yaris", "yearFrom": 2005, "yearTo": 2011 }
+    ],
+    "category": "Kormányzás",
+    "price": 11990,
+    "stock": 22,
+    "image": "IMAGES/kormany_szerkezet.jpg",
+    "description": "Kormány szerkezeti elem, könnyű és tartós."
+  },
+  {
+    "id": "BP-0025",
+    "name": "Hűtőfolyadék G12",
+    "brand": "Fuchs",
+    "oem": "602877",
+    "compatible": [
+      { "make": "Volkswagen", "model": "Jetta", "yearFrom": 2005, "yearTo": 2010 }
+    ],
+    "category": "Hűtés",
+    "price": 5490,
+    "stock": 35,
+    "image": "IMAGES/hutofoly.jpg",
+    "description": "Magas minőségű hűtőfolyadék, hosszú keringési ciklus."
+  },
+  {
+    "id": "BP-0026",
+    "name": "Generátor teljes",
+    "brand": "Bosch",
+    "oem": "0124125001",
+    "compatible": [
+      { "make": "Skoda", "model": "Superb", "yearFrom": 2002, "yearTo": 2008 }
+    ],
+    "category": "Elektromos",
+    "price": 38990,
+    "stock": 6,
+    "image": "IMAGES/generator.jpg",
+    "description": "Teljes generátor, 120A teljesítmény, garantált."
+  },
+  {
+    "id": "BP-0027",
+    "name": "Szélvédő tömítés",
+    "brand": "Insbruck",
+    "oem": "SEAL-WINDSHIELD",
+    "compatible": [
+      { "make": "Hyundai", "model": "Elantra", "yearFrom": 2006, "yearTo": 2011 }
+    ],
+    "category": "Karosszéria",
+    "price": 7990,
+    "stock": 13,
+    "image": "IMAGES/szelvedo_tomites.jpg",
+    "description": "Szélvédő gumi tömítés, teljes körülvétel."
+  },
+  {
+    "id": "BP-0028",
+    "name": "Lengéscsillapító elöl",
+    "brand": "Bilstein",
+    "oem": "220-A0041-4",
+    "compatible": [
+      { "make": "Mercedes-Benz", "model": "E-Class", "yearFrom": 2002, "yearTo": 2009 }
+    ],
+    "category": "Futómű",
+    "price": 27990,
+    "stock": 9,
+    "image": "IMAGES/lengescsillapito_elo.jpg",
+    "description": "Gázos lengéscsillapító elöl, szupersportív felfüggesztés."
+  }
+]
